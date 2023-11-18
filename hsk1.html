@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HSK 1</title>
+        <meta charset="UTF-8"/>
+        <style>
+            .body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .flip-card {
+                width: 300px;
+                height: 65px;
+                perspective: 1000px;
+                padding-top: 5px;
+                padding-left: 2%;
+            }
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+            .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+            .flip-side-1, .flip-side-2 {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden; /* Safari */
+                backface-visibility: hidden;
+            }
+            .flip-side-1 {
+                background-color: #bbb;
+                color: black;
+            }
+            .flip-side-2 {
+                background-color: dodgerblue;
+                color: white;
+                transform: rotateY(180deg);
+            }
+            .row {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+            }
+            .word {
+                width: 65px;
+                height: 65px;
+                text-align: center;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                border: 2px solid black;
+                border-radius: 5px;
+                background-color: rgb(188, 218, 19);
+                color: black;
+            }
+            span.the-tip {
+                background-color: darkblue;
+                color: yellow;
+                display: none;
+            }
+            .word-tip:hover .the-tip {
+                display: inline;
+            }
+            .word-tip:hover {
+                color: black;
+            }
+        </style>
+    </head>
+    <body onload="loadWords()">
+        <h1>HSK 1</h1>
+        <hr/>
+        
+        <ul>
+            <li>
+                <div class="row">
+                    <div class="word"><h3>爱：</h3></div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-side-1"><p style="font-size: large;">primer upotrebe u rečenici</p></div>
+                            <div class="flip-side-2">
+                                <p style="font-size: large;">
+                                    <span class="word-tip">我<span class="the-tip"> wǒ (ja) </span></span>
+                                    <span class="word-tip">爱<span class="the-tip"> ài (ljubav; voleti) </span></span>
+                                    <span class="word-tip">你<span class="the-tip"> nǐ (ti) </span></span>。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-side-1"><p style="font-size: large;">prevod primera</p></div>
+                            <div class="flip-side-2"><p style="font-size: large;">Volim te.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul id="list">
+
+        </ul>
+
+        <script type="text/javascript">
+            function loadWords() {
+                const words = ["爱", "八", "爸爸"];
+                let size = words.length;
+                let list = document.getElementById("list");
+                for (let i = 0; i < size; i++) {
+                    const word = words[i];
+                    list.insertAdjacentHTML("beforeend", "<li><div class=\"row\"><div class=\"word\"><h3>" + word + "</h3></div></div></li>")
+                }
+            }
+        </script>
+    </body>
+</html>
