@@ -99,6 +99,12 @@
                             <div class="flip-side-2"><p style="font-size: large;">Volim te.</p></div>
                         </div>
                     </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-side-1"><p style="font-size: large;">romanizacija</p></div>
+                            <div class="flip-side-2"><p style="font-size: large;">Wǒ ài nǐ.</p></div>
+                        </div>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -109,9 +115,15 @@
 
         <script type="text/javascript">
             function loadWords() {
-                const words = ["爱", "八", "爸爸"];
-                const sentences = ["test", "test2", "test3"];
-                const translations = ["prevod1", "prevod2", "prvod3"];
+                const words = ["爱", "八", "爸爸", "杯子", "北京", "本", "不客气", "不", "菜", "茶", "吃", "出租车"];
+                const sentences = ["我爱你。", "我八岁了。", "这是我爸爸。", "这个杯子是我的。", 
+                                    "我想去北京。", "我买了一本书。", "不客气。", "我不是中国人。", 
+                                    "服务员，点菜。", "我不喜欢喝茶。", "你想吃什么？", "哪儿有出租车？"];
+                const translations = ["Volim te.", "Imam osam godina.", "Ovo je moj tata.", "Ovo je moja šolja.", 
+                                    "Želim da idem u Peking.", "Kupio sam jednu knjigu.", "Nema na čemu.", "Nisam Kinez.",
+                                    "Konobar, spreman sam da poručim.", "Ne volim da pijem čaj", "Šta hoćeš da jedeš?", 
+                                    "Gde mogu da nađem taksi?"];
+                const pinyins = ["Wǒ ài nǐ", "", "", "", "", "", "", "", "", "", "", ""];
                 let size = words.length;
                 let list = document.getElementById("list");
                 for (let i = 0; i < size; i++) {
