@@ -110,11 +110,21 @@
         <script type="text/javascript">
             function loadWords() {
                 const words = ["爱", "八", "爸爸"];
+                const sentences = ["test", "test2", "test3"];
+                const translations = ["prevod1", "prevod2", "prvod3"];
                 let size = words.length;
                 let list = document.getElementById("list");
                 for (let i = 0; i < size; i++) {
                     const word = words[i];
-                    list.insertAdjacentHTML("beforeend", "<li><div class=\"row\"><div class=\"word\"><h3>" + word + "</h3></div></div></li>")
+                    const sentence = sentences[i];
+                    const translation = translations[i];
+                    list.insertAdjacentHTML("beforeend", "<li><div class=\"row\"><div class=\"word\"><h3>" + word + "</h3></div>" 
+                        + "<div class=\"flip-card\"><div class=\"flip-card-inner\">"
+                        + "<div class=\"flip-side-1\"><p style=\"font-size: large;\">primer upotrebe u rečenici</p></div>"
+                        + "<div class=\"flip-side-2\"><p style=\"font-size: large;\">" + sentence + "</p>"
+                        + "</div></div></div><div class=\"flip-card\"><div class=\"flip-card-inner\">"
+                        + "<div class=\"flip-side-1\"><p style=\"font-size: large;\">prevod primera</p></div>"
+                        + "<div class=\"flip-side-2\"><p style=\"font-size: large;\">" + translation + "</p></div></div></div></div></li>")
                 }
             }
         </script>
