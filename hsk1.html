@@ -9,9 +9,8 @@
             }
             .flip-card {
                 width: 300px;
-                height: 65px;
+                height: 95px;
                 perspective: 1000px;
-                padding-top: 5px;
                 padding-left: 2%;
             }
             .flip-card-inner {
@@ -49,16 +48,18 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: left;
+                padding-top: 10px;
             }
             .word {
-                width: 65px;
-                height: 65px;
+                width: 95px;
+                height: 95px;
                 text-align: center;
                 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
                 border: 2px solid black;
                 border-radius: 5px;
                 background-color: red;
                 color: gold;
+                font-size: 20px;
             }
             span.the-tip {
                 background-color: darkblue;
@@ -83,9 +84,9 @@
                     <div class="word"><h3>爱：</h3></div>
                     <div class="flip-card">
                         <div class="flip-card-inner">
-                            <div class="flip-side-1"><p style="font-size: large;">primer upotrebe u rečenici</p></div>
+                            <div class="flip-side-1"><p style="font-size: 25px;">primer upotrebe u rečenici</p></div>
                             <div class="flip-side-2">
-                                <p style="font-size: large;">
+                                <p style="font-size: 25px;">
                                     <span class="word-tip">我<span class="the-tip"> wǒ (ja) </span></span>
                                     <span class="word-tip">爱<span class="the-tip"> ài (ljubav; voleti) </span></span>
                                     <span class="word-tip">你<span class="the-tip"> nǐ (ti) </span></span>。
@@ -95,14 +96,14 @@
                     </div>
                     <div class="flip-card">
                         <div class="flip-card-inner">
-                            <div class="flip-side-1"><p style="font-size: large;">prevod primera</p></div>
-                            <div class="flip-side-2"><p style="font-size: large;">Volim te.</p></div>
+                            <div class="flip-side-1"><p style="font-size: 25px;">prevod primera</p></div>
+                            <div class="flip-side-2"><p style="font-size: 25px;">Volim te.</p></div>
                         </div>
                     </div>
                     <div class="flip-card">
                         <div class="flip-card-inner">
-                            <div class="flip-side-1"><p style="font-size: large;">romanizacija</p></div>
-                            <div class="flip-side-2"><p style="font-size: large;">Wǒ ài nǐ.</p></div>
+                            <div class="flip-side-1"><p style="font-size: 25px;">romanizacija</p></div>
+                            <div class="flip-side-2"><p style="font-size: 25px;">Wǒ ài nǐ.</p></div>
                         </div>
                     </div>
                 </div>
@@ -116,18 +117,22 @@
 
         <script type="text/javascript">
             function loadWords() {
-                const words = ["爱", "八", "爸爸", "杯子", "北京", "本", "不客气", "不", "菜", "茶", "吃", "出租车"];
+                const words = ["爱", "八", "爸爸", "杯子", "北京", "本", "不客气", "不", "菜", "茶", "吃", "出租车",
+                                "打电话", "大", "的", "点"];
                 const sentences = ["我爱你。", "我八岁了。", "这是我爸爸。", "这个杯子是我的。", 
                                     "我想去北京。", "我买了一本书。", "不客气。", "我不是中国人。", 
-                                    "服务员，点菜。", "我不喜欢喝茶。", "你想吃什么？", "哪儿有出租车？"];
+                                    "服务员，点菜。", "我不喜欢喝茶。", "你想吃什么？", "哪儿有出租车？", 
+                                    "我明天给你打电话。", "北京很大。", "这是我的电脑。", "几点了？"];
                 const translations = ["Volim te.", "Imam osam godina.", "Ovo je moj tata.", "Ova šolja je moja.", 
                                     "Želim da idem u Peking.", "Kupio sam jednu knjigu.", "Nema na čemu.", "Nisam Kinez.",
                                     "Konobar, spreman sam da poručim.", "Ne volim da pijem čaj.", "Šta hoćeš da jedeš?", 
-                                    "Gde mogu da nađem taksi?"];
+                                    "Gde mogu da nađem taksi?", "Zvaću te sutra.", "Peking je veliki.", "Ovo je moj kompjuter.", 
+                                    "Koliko je sati?"];
                 const pinyins = ["Wǒ ài nǐ", "Wǒ bā suìle", "Zhè shì wǒ bàba", "Zhège bēizi shì wǒde", 
                                 "Wǒ xiǎng qù běijīng", "Wǒ mǎile yìběn shū", "Bú kèqì", "Wǒ bú shì zhōngguórén", 
                                 "Fúwùyuán， diǎncài", "Wǒ bù xǐhuan hē chá", "Nǐ xiǎng chī shénme？", 
-                                "Nǎer yǒu chūzūchē？"];
+                                "Nǎer yǒu chūzūchē？", "Wǒ míngtiān gěi nǐ dǎ diànhuà", "Běijīng hěn dà", "Zhè shì wǒde diànnǎo", 
+                                "Jǐ diǎnle"];
                 let size = words.length;
                 let list = document.getElementById("list");
                 for (let i = 0; i < size; i++) {
@@ -137,14 +142,14 @@
                     const pinyin = pinyins[i];
                     list.insertAdjacentHTML("beforeend", "<li><div class=\"row\"><div class=\"word\"><h3>" + word + "</h3></div>" 
                         + "<div class=\"flip-card\"><div class=\"flip-card-inner\">"
-                        + "<div class=\"flip-side-1\"><p style=\"font-size: large;\">primer upotrebe u rečenici</p></div>"
-                        + "<div class=\"flip-side-2\"><p style=\"font-size: large;\">" + sentence + "</p>"
+                        + "<div class=\"flip-side-1\"><p style=\"font-size: 25px;\">primer upotrebe u rečenici</p></div>"
+                        + "<div class=\"flip-side-2\"><p style=\"font-size: 25px;\">" + sentence + "</p>"
                         + "</div></div></div><div class=\"flip-card\"><div class=\"flip-card-inner\">"
-                        + "<div class=\"flip-side-1\"><p style=\"font-size: large;\">prevod primera</p></div>"
-                        + "<div class=\"flip-side-2\"><p style=\"font-size: large;\">" + translation + "</p></div></div></div>"
+                        + "<div class=\"flip-side-1\"><p style=\"font-size: 25px;\">prevod primera</p></div>"
+                        + "<div class=\"flip-side-2\"><p style=\"font-size: 25px;\">" + translation + "</p></div></div></div>"
                         + "<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-side-1\">"
-                        + "<p style=\"font-size: large;\">romanizacija</p></div><div class=\"flip-side-2\">"
-                        + "<p style=\"font-size: large;\">" + pinyin +"</p></div></div></div></div></li>")
+                        + "<p style=\"font-size: 25px;\">romanizacija</p></div><div class=\"flip-side-2\">"
+                        + "<p style=\"font-size: 25px;\">" + pinyin +"</p></div></div></div></div></li>")
                 }
             }
         </script>
