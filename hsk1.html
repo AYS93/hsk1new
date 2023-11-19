@@ -130,13 +130,17 @@
                     const word = words[i];
                     const sentence = sentences[i];
                     const translation = translations[i];
+                    const pinyin = pinyins[i];
                     list.insertAdjacentHTML("beforeend", "<li><div class=\"row\"><div class=\"word\"><h3>" + word + "</h3></div>" 
                         + "<div class=\"flip-card\"><div class=\"flip-card-inner\">"
                         + "<div class=\"flip-side-1\"><p style=\"font-size: large;\">primer upotrebe u rečenici</p></div>"
                         + "<div class=\"flip-side-2\"><p style=\"font-size: large;\">" + sentence + "</p>"
                         + "</div></div></div><div class=\"flip-card\"><div class=\"flip-card-inner\">"
                         + "<div class=\"flip-side-1\"><p style=\"font-size: large;\">prevod primera</p></div>"
-                        + "<div class=\"flip-side-2\"><p style=\"font-size: large;\">" + translation + "</p></div></div></div></div></li>")
+                        + "<div class=\"flip-side-2\"><p style=\"font-size: large;\">" + translation + "</p></div></div></div>"
+                        + "<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-side-1\">"
+                        + "<p style=\"font-size: large;\">romanizacija</p></div><div class=\"flip-side-2\">"
+                        + "<p style=\"font-size: large;\">" + pinyin +"</p></div></div></div></div></li>")
                 }
             }
         </script>
