@@ -118,21 +118,33 @@
         <script type="text/javascript">
             function loadWords() {
                 const words = ["爱", "八", "爸爸", "杯子", "北京", "本", "不客气", "不", "菜", "茶", "吃", "出租车",
-                                "打电话", "大", "的", "点"];
+                                "打电话", "大", "的", "点", "电脑", "电视", "电影", "东西", "都", "读", "对不起", "多", 
+                                "多少", "儿子", "二", "饭馆", "飞机", "分钟"];
                 const sentences = ["我爱你。", "我八岁了。", "这是我爸爸。", "这个杯子是我的。", 
                                     "我想去北京。", "我买了一本书。", "不客气。", "我不是中国人。", 
                                     "服务员，点菜。", "我不喜欢喝茶。", "你想吃什么？", "哪儿有出租车？", 
-                                    "我明天给你打电话。", "北京很大。", "这是我的电脑。", "几点了？"];
+                                    "我明天给你打电话。", "北京很大。", "这是我的电脑。", "几点了？", "我没有电脑。",
+                                    "我在看电视。", "我喜欢看电影。", "我买了很多东西。", "他们都是中国人。", 
+                                    "这个字怎么读？", "对不起、我错了。", "我有很多书。", "这个多少钱？", "我儿子叫王明。", 
+                                    "今天是二月二号。", "我喜欢去那家饭馆。", "我不喜欢坐飞机。", "给我五分钟。"];
                 const translations = ["Volim te.", "Imam osam godina.", "Ovo je moj tata.", "Ova šolja je moja.", 
                                     "Želim da idem u Peking.", "Kupio sam jednu knjigu.", "Nema na čemu.", "Nisam Kinez.",
                                     "Konobar, spreman sam da poručim.", "Ne volim da pijem čaj.", "Šta hoćeš da jedeš?", 
                                     "Gde mogu da nađem taksi?", "Zvaću te sutra.", "Peking je veliki.", "Ovo je moj kompjuter.", 
-                                    "Koliko je sati?"];
+                                    "Koliko je sati?", "Nemam kompjuter.", "Gledam TV.", "Volim da gledam filmove.", 
+                                    "Kupio sam puno stvari.", "Svi oni su Kinezi.", "Kako se čita ova reč?", 
+                                    "Oprostite, moja krivica.", "Imam puno knjiga.", "Koliko ovo košta?", "Moj sin se zove Vang Ming.",
+                                    "Danas je drugi februar.", "Volim da idem u taj restoran.", "Ne volim letenje avionom.", 
+                                    "Daj mi pet minuta."];
                 const pinyins = ["Wǒ ài nǐ", "Wǒ bā suìle", "Zhè shì wǒ bàba", "Zhège bēizi shì wǒde", 
                                 "Wǒ xiǎng qù běijīng", "Wǒ mǎile yìběn shū", "Bú kèqì", "Wǒ bú shì zhōngguórén", 
                                 "Fúwùyuán， diǎncài", "Wǒ bù xǐhuan hē chá", "Nǐ xiǎng chī shénme？", 
                                 "Nǎer yǒu chūzūchē？", "Wǒ míngtiān gěi nǐ dǎ diànhuà", "Běijīng hěn dà", "Zhè shì wǒde diànnǎo", 
-                                "Jǐ diǎnle"];
+                                "Jǐ diǎnle", "Wǒ méiyǒu diànnǎo", "Wǒ zài kàn diànshì", "Wǒ xǐhuān kàn diànyǐng", 
+                                "Wǒ mǎile hěnduō dōngxī", "Tāmen dōu shì zhōngguó rén", "Zhège zì zěnme dú?", 
+                                "Duìbùqǐ, wǒ cuòle", "Wǒ yǒu hěnduō shū", "Zhège duōshǎo qián?", "Wǒ érzi jiào wáng míng", 
+                                "Jīntiān shì èr yuè èr hào", "Wǒ xǐhuān qù nà jiā fànguǎn", "Wǒ bù xǐhuān zuò fēijī", 
+                                "Gěi wǒ wǔ fēnzhōng"];
                 let size = words.length;
                 let list = document.getElementById("list");
                 for (let i = 0; i < size; i++) {
